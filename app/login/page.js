@@ -14,7 +14,7 @@ const AuthForm = () => {
 
     return (
         <div className="flex justify-center items-center h-screen">
-            <Card className="w-full max-w-md p-4 bg-gray-800 text-white border border-gray-700">
+            <Card className="w-full max-w-md p-4 text-white border border-gray-700">
                 <CardHeader>
                     <h2 className="text-xl font-semibold text-center">
                         {isLogin ? "Login" : "Create an Account"}
@@ -28,7 +28,7 @@ const AuthForm = () => {
                                 <Label htmlFor="name" className="block text-sm font-medium">
                                     Name
                                 </Label>
-                                <Input id="name" type="text" placeholder="Your Name" className="w-full " />
+                                <Input id="name" type="text" placeholder="Your Name" className="w-full" />
                             </div>
                         )}
                         <div className="mb-4">

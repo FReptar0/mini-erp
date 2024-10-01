@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	darkMode: ["class"],
+	// Remueve la opción de cambiar entre modo claro y oscuro.
+	darkMode: "class", // Mantén el darkMode como "class" para que siempre utilice estilos oscuros.
 	content: [
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,53 +10,58 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
+				// Define los colores para un modo oscuro consistente
+				background: '#000000', // Fondo negro para el black mode
+				foreground: '#ffffff', // Texto blanco o claro para contraste
+
+				// Configura los colores de los componentes para que funcionen bien con fondo negro
 				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+					DEFAULT: '#1e1e1e', // Fondo oscuro para las tarjetas
+					foreground: '#ffffff', // Texto claro en las tarjetas
 				},
 				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
+					DEFAULT: '#2c2c2c', // Fondo oscuro para popovers
+					foreground: '#ffffff', // Texto claro
 				},
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: '#ff5722', // Color primario en modo oscuro (puedes ajustar)
+					foreground: '#ffffff',
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '#03a9f4', // Color secundario en modo oscuro
+					foreground: '#ffffff',
 				},
 				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
+					DEFAULT: '#757575', // Color muted más oscuro
+					foreground: '#ffffff',
 				},
 				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					DEFAULT: '#8bc34a', // Color acentuado para elementos
+					foreground: '#ffffff',
 				},
 				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
+					DEFAULT: '#f44336', // Color para acciones destructivas (ej. botones de borrar)
+					foreground: '#ffffff',
 				},
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
+				border: '#303030', // Bordes oscuros
+				input: '#1e1e1e', // Color para inputs con fondo oscuro
+				ring: '#616161', // Color del anillo de enfoque en modo oscuro
+
+				// Colores para gráficos (charts) adaptados al black mode
 				chart: {
-					'1': 'hsl(var(--chart-1))',
-					'2': 'hsl(var(--chart-2))',
-					'3': 'hsl(var(--chart-3))',
-					'4': 'hsl(var(--chart-4))',
-					'5': 'hsl(var(--chart-5))'
+					'1': '#ff5722',
+					'2': '#03a9f4',
+					'3': '#8bc34a',
+					'4': '#ffeb3b',
+					'5': '#f44336',
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
-			}
-		}
+				sm: 'calc(var(--radius) - 4px)',
+			},
+		},
 	},
 	plugins: [require("tailwindcss-animate")],
 };
